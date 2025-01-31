@@ -5,6 +5,7 @@ import static org.hamcrest.Matchers.containsInAnyOrder;
 import static org.hamcrest.Matchers.instanceOf;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -42,12 +43,11 @@ public class DaysOfTheWeekHandlerTest {
     void testGetDays() {
         //Given
         DaysOfTheWeekHandler daysOfTheWeekHandler = new DaysOfTheWeekHandler();
-        ArrayList<String> days = daysOfTheWeekHandler.daysOfTheWeekList;
+        daysOfTheWeekHandler.createList();
         //When
-        daysOfTheWeekHandler.getDays();
+        List<String> days = daysOfTheWeekHandler.getDays();
         //Then
-        assertThat(days, containsInAnyOrder("Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"
-        ));
+        assertThat(days, containsInAnyOrder("Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"));
     }
 
     
