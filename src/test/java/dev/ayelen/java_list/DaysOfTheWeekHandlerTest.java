@@ -16,7 +16,7 @@ public class DaysOfTheWeekHandlerTest {
         //
         DaysOfTheWeekHandler daysOfTheWeekHandler = new DaysOfTheWeekHandler();
         //When
-        
+        ArrayList<String> list = daysOfTheWeekHandler.daysOfTheWeekList;
         //Then
         assertThat(list, instanceOf(ArrayList.class));
         
