@@ -34,8 +34,20 @@ public class DaysOfTheWeekHandlerTest {
         //Then
         assertThat(list, containsInAnyOrder("Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"
         ));
+    
+    }
 
-        
+    @Test
+    @DisplayName("getDays returns the days of the week")
+    void testGetDays() {
+        //Given
+        DaysOfTheWeekHandler daysOfTheWeekHandler = new DaysOfTheWeekHandler();
+        ArrayList<String> days = daysOfTheWeekHandler.daysOfTheWeekList;
+        //When
+        daysOfTheWeekHandler.getDays();
+        //Then
+        assertThat(days, containsInAnyOrder("Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"
+        ));
     }
 
     

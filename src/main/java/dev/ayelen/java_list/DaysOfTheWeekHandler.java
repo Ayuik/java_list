@@ -15,4 +15,8 @@ public class DaysOfTheWeekHandler {
         daysOfTheWeekList.add("Saturday");
         daysOfTheWeekList.add("Sunday");
     }
+
+    public List<String> getDays(){
+
+    }
 }
