@@ -2,6 +2,7 @@ package dev.ayelen.java_list;
 
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.containsInAnyOrder;
+import static org.hamcrest.Matchers.equalTo;
 import static org.hamcrest.Matchers.instanceOf;
 
 import java.util.ArrayList;
@@ -49,6 +50,20 @@ public class DaysOfTheWeekHandlerTest {
         //Then
         assertThat(days, containsInAnyOrder("Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"));
     }
+
+    @Test
+    @DisplayName("getSize returns the number of items in daysOfTheWeekList")
+    void testGetSize() {
+        //Given
+        DaysOfTheWeekHandler daysOfTheWeekHandler = new DaysOfTheWeekHandler();
+        daysOfTheWeekHandler.createList();
+        //When
+        int length = daysOfTheWeekHandler.getSize();
+        //Then
+        assertThat(length, equalTo(7));
+    }
+
+    
 
     
     

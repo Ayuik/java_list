@@ -19,4 +19,8 @@ public class DaysOfTheWeekHandler {
     public List<String> getDays(){
         return daysOfTheWeekList;
     }
+
+    public int getSize(){
+
+    }
 }
