@@ -23,4 +23,8 @@ public class DaysOfTheWeekHandler {
     public int getSize(){
         return daysOfTheWeekList.size();
     }
+
+    public void deleteDay(){
+        
+    }
 }

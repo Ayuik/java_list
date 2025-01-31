@@ -1,9 +1,11 @@
 package dev.ayelen.java_list;
 
 import static org.hamcrest.MatcherAssert.assertThat;
+import static org.hamcrest.Matchers.contains;
 import static org.hamcrest.Matchers.containsInAnyOrder;
 import static org.hamcrest.Matchers.equalTo;
 import static org.hamcrest.Matchers.instanceOf;
+import static org.hamcrest.Matchers.not;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -63,8 +65,20 @@ public class DaysOfTheWeekHandlerTest {
         assertThat(length, equalTo(7));
     }
 
-    
+    @Test
+    @DisplayName("deleteDay deletes a day from the list")
+    void testDeleteDay() {
+        //Given
+        DaysOfTheWeekHandler daysOfTheWeekHandler = new DaysOfTheWeekHandler();
+        daysOfTheWeekHandler.createList();
+        //When
+        daysOfTheWeekHandler.deleteDay();
+        List<String> aDayLess= daysOfTheWeekHandler.daysOfTheWeekList;
+        //Then
+        assertThat(aDayLess, not(contains("Wednesday")));
+    }
 
+    
     
     
 }
