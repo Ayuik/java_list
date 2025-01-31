@@ -1,6 +1,7 @@
 package dev.ayelen.java_list;
 
 import static org.hamcrest.MatcherAssert.assertThat;
+import static org.hamcrest.Matchers.containsInAnyOrder;
 import static org.hamcrest.Matchers.instanceOf;
 
 import java.util.ArrayList;
@@ -11,7 +12,7 @@ import org.junit.jupiter.api.Test;
 public class DaysOfTheWeekHandlerTest {
 
     @Test
-    @DisplayName("daysOfTheWeekList is an instanceof List<String>")
+    @DisplayName("daysOfTheWeekList is an instanceof ArrayList<String>")
     void testIsDaysOfTheWeekAListString() {
         //
         DaysOfTheWeekHandler daysOfTheWeekHandler = new DaysOfTheWeekHandler();
@@ -21,5 +22,22 @@ public class DaysOfTheWeekHandlerTest {
         assertThat(list, instanceOf(ArrayList.class));
         
     }
+
+    @Test
+    @DisplayName("createList adds the days of the week to daysOfTheWeekList")
+    void testCreateList() {
+        //Given
+        DaysOfTheWeekHandler daysOfTheWeekHandler = new DaysOfTheWeekHandler();
+        ArrayList<String> list = daysOfTheWeekHandler.daysOfTheWeekList;
+        //When
+        daysOfTheWeekHandler.createList();
+        //Then
+        assertThat(list, containsInAnyOrder("Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"
+        ));
+
+        
+    }
+
+    
     
 }

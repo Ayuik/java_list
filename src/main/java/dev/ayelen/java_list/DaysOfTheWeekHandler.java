@@ -5,6 +5,8 @@ import java.util.List;
 
 public class DaysOfTheWeekHandler {
     ArrayList<String> daysOfTheWeekList = new ArrayList <>();
-    
 
+    public void createList() {
+        
+    }
 }
