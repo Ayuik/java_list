@@ -32,8 +32,8 @@ public class DaysOfTheWeekHandler {
         return day;
     }
 
-    public boolean checkExistance(String day){
-
+    public boolean checkExistence(String day){
+        return daysOfTheWeekList.contains(day);
     }
 
 }

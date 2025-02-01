@@ -92,15 +92,15 @@ public class DaysOfTheWeekHandlerTest {
     }
 
     @Test
-    @DisplayName("checkExistance checks if a day is on the list")
-    void testCheckExistance() {
+    @DisplayName("checkExistence checks if a day is on the list")
+    void testCheckExistence() {
         //Given
         DaysOfTheWeekHandler daysOfTheWeekHandler = new DaysOfTheWeekHandler();
         daysOfTheWeekHandler.createList();
         //When
-        boolean existance = daysOfTheWeekHandler.checkExistance("Wednesday");
+        boolean existence = daysOfTheWeekHandler.checkExistence("Wednesday");
         //Then
-        assertThat(existance, is(true));
+        assertThat(existence, is(true));
     }
   
 }
