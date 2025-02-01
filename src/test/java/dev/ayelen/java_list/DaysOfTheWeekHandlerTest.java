@@ -4,6 +4,7 @@ import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.contains;
 import static org.hamcrest.Matchers.containsInAnyOrder;
 import static org.hamcrest.Matchers.containsInRelativeOrder;
+import static org.hamcrest.Matchers.empty;
 import static org.hamcrest.Matchers.equalTo;
 import static org.hamcrest.Matchers.instanceOf;
 import static org.hamcrest.Matchers.not;
@@ -112,9 +113,15 @@ public class DaysOfTheWeekHandlerTest {
         daysOfTheWeekHandler.sortAbc();
         List<String> sortedList = daysOfTheWeekHandler.daysOfTheWeekList;
         assertThat(sortedList, containsInRelativeOrder( "Friday", "Monday", "Saturday", "Sunday", "Thursday", "Tuesday", "Wednesday"));
-
     }
 
-    
-  
+    @Test
+    @DisplayName("emptyList deletes all the items on the list")
+    void testEmptyList() {
+        DaysOfTheWeekHandler daysOfTheWeekHandler = new DaysOfTheWeekHandler();
+        ArrayList<String> list = daysOfTheWeekHandler.daysOfTheWeekList;
+        daysOfTheWeekHandler.createList();
+        daysOfTheWeekHandler.emptyList();
+        assertThat(list, is(empty()));
+    }  
 }
