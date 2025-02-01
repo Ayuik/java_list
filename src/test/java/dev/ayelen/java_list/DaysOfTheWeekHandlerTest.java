@@ -3,6 +3,7 @@ package dev.ayelen.java_list;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.contains;
 import static org.hamcrest.Matchers.containsInAnyOrder;
+import static org.hamcrest.Matchers.containsInRelativeOrder;
 import static org.hamcrest.Matchers.equalTo;
 import static org.hamcrest.Matchers.instanceOf;
 import static org.hamcrest.Matchers.not;
@@ -102,5 +103,18 @@ public class DaysOfTheWeekHandlerTest {
         //Then
         assertThat(existence, is(true));
     }
+
+    @Test
+    @DisplayName("sortAbc orders the items alphabetically")
+    void testSortAbc() {
+        DaysOfTheWeekHandler daysOfTheWeekHandler = new DaysOfTheWeekHandler();
+        daysOfTheWeekHandler.createList();
+        daysOfTheWeekHandler.sortAbc();
+        List<String> sortedList = daysOfTheWeekHandler.daysOfTheWeekList;
+        assertThat(sortedList, containsInRelativeOrder( "Friday", "Monday", "Saturday", "Sunday", "Thursday", "Tuesday", "Wednesday"));
+
+    }
+
+    
   
 }
