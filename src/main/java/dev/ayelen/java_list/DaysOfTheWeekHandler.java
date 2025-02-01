@@ -39,6 +39,7 @@ public class DaysOfTheWeekHandler {
     }
 
     public void sortAbc(){
+        Collections.sort(daysOfTheWeekList);
     }
 
 }
