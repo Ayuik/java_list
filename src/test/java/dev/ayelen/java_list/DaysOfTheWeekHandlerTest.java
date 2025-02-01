@@ -72,10 +72,9 @@ public class DaysOfTheWeekHandlerTest {
         DaysOfTheWeekHandler daysOfTheWeekHandler = new DaysOfTheWeekHandler();
         daysOfTheWeekHandler.createList();
         //When
-        daysOfTheWeekHandler.deleteDay();
-        List<String> aDayLess= daysOfTheWeekHandler.daysOfTheWeekList;
+        daysOfTheWeekHandler.deleteDay("Wednesday");
         //Then
-        assertThat(aDayLess, not(contains("Wednesday")));
+        assertThat(daysOfTheWeekHandler.daysOfTheWeekList, not(contains("Wednesday")));
     }
 
     
