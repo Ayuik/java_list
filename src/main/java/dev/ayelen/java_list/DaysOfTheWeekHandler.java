@@ -32,4 +32,8 @@ public class DaysOfTheWeekHandler {
         return day;
     }
 
+    public boolean checkExistance(String day){
+
+    }
+
 }

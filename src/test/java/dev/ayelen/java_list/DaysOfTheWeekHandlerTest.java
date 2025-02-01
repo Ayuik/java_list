@@ -6,6 +6,7 @@ import static org.hamcrest.Matchers.containsInAnyOrder;
 import static org.hamcrest.Matchers.equalTo;
 import static org.hamcrest.Matchers.instanceOf;
 import static org.hamcrest.Matchers.not;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.hamcrest.CoreMatchers.is;
 
 import java.util.ArrayList;
@@ -88,6 +89,18 @@ public class DaysOfTheWeekHandlerTest {
         String day = daysOfTheWeekHandler.getSpecificDay("Wednesday");
         //Then
         assertThat(day, is("Wednesday"));
+    }
+
+    @Test
+    @DisplayName("checkExistance checks if a day is on the list")
+    void testCheckExistance() {
+        //Given
+        DaysOfTheWeekHandler daysOfTheWeekHandler = new DaysOfTheWeekHandler();
+        daysOfTheWeekHandler.createList();
+        //When
+        boolean existance = daysOfTheWeekHandler.checkExistance("Wednesday");
+        //Then
+        assertThat(existance, is(true));
     }
   
 }
