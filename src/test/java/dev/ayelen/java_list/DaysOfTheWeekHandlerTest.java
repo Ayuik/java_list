@@ -77,7 +77,16 @@ public class DaysOfTheWeekHandlerTest {
         assertThat(daysOfTheWeekHandler.daysOfTheWeekList, not(contains("Wednesday")));
     }
 
-    
-    
-    
+    @Test
+    @DisplayName("getSpecificDay gets a day from the list")
+    void testGetSpecificDay() {
+        //Given
+        DaysOfTheWeekHandler daysOfTheWeekHandler = new DaysOfTheWeekHandler();
+        daysOfTheWeekHandler.createList();
+        //When
+        daysOfTheWeekHandler.getSpecificDay("Wednesday");
+        //Then
+        assertThat(daysOfTheWeekHandler.daysOfTheWeekList, not(contains("Wednesday")));
+    }
+  
 }
