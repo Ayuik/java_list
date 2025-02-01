@@ -24,6 +24,7 @@ public class DaysOfTheWeekHandler {
         return daysOfTheWeekList.size();
     }
 
-    public void deleteDay(){
+    public void deleteDay(String day){
+        daysOfTheWeekList.remove(day);
     }
 }
