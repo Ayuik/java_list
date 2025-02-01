@@ -29,6 +29,7 @@ public class DaysOfTheWeekHandler {
     }
 
     public String getSpecificDay(String day){
+        return day;
     }
 
 }
