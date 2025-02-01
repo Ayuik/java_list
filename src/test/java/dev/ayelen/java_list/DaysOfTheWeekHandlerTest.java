@@ -6,6 +6,7 @@ import static org.hamcrest.Matchers.containsInAnyOrder;
 import static org.hamcrest.Matchers.equalTo;
 import static org.hamcrest.Matchers.instanceOf;
 import static org.hamcrest.Matchers.not;
+import static org.hamcrest.CoreMatchers.is;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -84,9 +85,9 @@ public class DaysOfTheWeekHandlerTest {
         DaysOfTheWeekHandler daysOfTheWeekHandler = new DaysOfTheWeekHandler();
         daysOfTheWeekHandler.createList();
         //When
-        daysOfTheWeekHandler.getSpecificDay("Wednesday");
+        String day = daysOfTheWeekHandler.getSpecificDay("Wednesday");
         //Then
-        assertThat(daysOfTheWeekHandler.daysOfTheWeekList, not(contains("Wednesday")));
+        assertThat(day, is("Wednesday"));
     }
   
 }

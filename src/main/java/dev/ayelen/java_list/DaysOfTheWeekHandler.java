@@ -28,8 +28,7 @@ public class DaysOfTheWeekHandler {
         daysOfTheWeekList.remove(day);
     }
 
-    public String getSpecificDay(){
-
+    public String getSpecificDay(String day){
     }
 
 }
