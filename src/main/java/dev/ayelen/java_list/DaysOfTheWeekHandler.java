@@ -42,7 +42,7 @@ public class DaysOfTheWeekHandler {
     }
 
     public void emptyList(){
-        
+        daysOfTheWeekList.removeAll(daysOfTheWeekList);
     }
 
 }
